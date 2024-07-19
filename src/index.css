@@ -1,0 +1,44 @@
+/* src/index.css */
+@tailwind base;
+
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bgc {
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      @apply w-full h-full;
+    }
+
+    background-image: linear-gradient(
+      45deg,
+      rgba(138, 70, 109, 0.826) 30%,
+      rgb(66, 112, 112),
+      rgba(100, 40, 95, 0.676) 70%
+    );
+  }
+  .navbar {
+    @apply w-full h-32 bg-transparent;
+  }
+  .link-hover-effect::after {
+    content: "";
+    display: block;
+    height: 2px;
+    /* background-color: transparent; */
+    transition: width 0.3s, background-color 0.3s, height 0.3s;
+  }
+  .link-hover-effect:hover::after {
+    width: 100%;
+    background-color: #d4d0ddb8; /* Change to your desired color */
+    height: 4px; /* Change to your desired height */
+  }
+  .btn {
+    @apply hover:text-white hover:bg-purple-800     hover:ring-offset-blue-700 hover:ring-offset-2  hover:ring-0 hover:translate-x-2   ring ring-black ring-opacity-20  px-0 py-2  font-serif rounded-full;
+  }
+  .box {
+    @apply w-96  h-72 my-32 ml-10 bg-transparent;
+  }
+}
